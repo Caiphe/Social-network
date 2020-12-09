@@ -110,6 +110,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # STATICFILES_DIRS = [BASE_DIR, 'static_project']
-# STATICFILES_ROOT = [BASE_DIR / 'static']
+STATICFILES_ROOT = [BASE_DIR / 'static']
 # MEDIA_ROOT = [BASE_DIR / 'media']
 # MEDIA_URL = [BASE_DIR / 'media']

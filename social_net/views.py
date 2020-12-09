@@ -10,4 +10,4 @@ def home_view(request):
     'user_t': user
   }
   
-  return render(request, 'home.html', context)
+  return render(request, 'main/home.html', context)
