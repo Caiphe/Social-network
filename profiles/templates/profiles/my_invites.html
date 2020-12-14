@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block title %} - Invites{% endblock title %}
+  
+  {% block content %}
+    
+  {% if is_empty %}
+    <h3>You have no invites</h3>
+  {% endif %}
+
+      
+      {% for obj in qs %}
+        <div class="ui segment">
+          <div class="ui grid">
+            <div class="row">
+              <div class="three wide column">
+                <img class="ui small circular image"  src='{{ obj.avatar.url }}' />
+              </div>
+              <div class="thirteen wide column">
+                <h4>{{ obj.user|title }}</h4>
+                <p>{{ obj.bio }}</p>
+                  <a type="submit" class="ui positive basic button mb-5">See Ptofile</a>
+
+                  <form action="{% url 'profiles:accept-invite' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="profile_pk" value='{{ obj.pk }}' />
+                    <button type="submit" class="ui button positive mb-5">
+                      <i class="icon check"></i>Accept Invite
+                    </button>
+                  </form>
+
+                  <form action="{% url 'profiles:reject-invite' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="profile_pk" value='{{ obj.pk }}' />
+                    <button type="submit" class="ui button negative mb-5">
+                      <i class="icon close"></i> Reject Invite
+                    </button>
+                  </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+        
+  
+  {% endblock content %}
+    

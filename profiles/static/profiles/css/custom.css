@@ -4,7 +4,7 @@ body {
 .nav {
   border-radius: 0px !important;
   padding: 10px 0px 10px !important;
-  background-color: #396afc !important;
+  background-color: #23315a !important;
 }
 .mb-7 {
   margin-bottom: 7px !important;
@@ -25,4 +25,17 @@ body {
   list-style: square;
   padding: 0px;
   margin: 0px;
+}
+.mb-5 {
+  margin-bottom: 5px !important;
+}
+.bwhite-lg {
+  background-color: transparent !important;
+}
+.bwhite-sm {
+  background-color: transparent !important;
+  width: 10px !important;
+}
+.comment-box {
+  display: none;
 }
